@@ -18,6 +18,8 @@
 		95A152C22A4A44C9001335E7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A152C12A4A44C9001335E7 /* MainView.swift */; };
 		95A152C42A4BBEAC001335E7 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A152C32A4BBEAC001335E7 /* LaunchView.swift */; };
 		95A152C72A4BCA3F001335E7 /* UIScreens+sizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A152C62A4BCA3F001335E7 /* UIScreens+sizes.swift */; };
+		95E8570C2A4CC95000DDDFF2 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E8570B2A4CC95000DDDFF2 /* SignInView.swift */; };
+		95E8570F2A4CE71900DDDFF2 /* BackwardButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E8570E2A4CE71900DDDFF2 /* BackwardButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		95A152C12A4A44C9001335E7 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		95A152C32A4BBEAC001335E7 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		95A152C62A4BCA3F001335E7 /* UIScreens+sizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreens+sizes.swift"; sourceTree = "<group>"; };
+		95E8570B2A4CC95000DDDFF2 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		95E8570E2A4CE71900DDDFF2 /* BackwardButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackwardButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +108,6 @@
 			children = (
 				95A152C52A4BCA22001335E7 /* Extensions */,
 				95A152C02A4A438C001335E7 /* ViewModel */,
-				95A152BF2A4A4385001335E7 /* View */,
 				95A152BE2A4A437F001335E7 /* Model */,
 				95A152BD2A4A4370001335E7 /* Screens */,
 				95A1528E2A4A4303001335E7 /* CryptoApp.swift */,
@@ -144,8 +147,10 @@
 		95A152BD2A4A4370001335E7 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				95E8570D2A4CE6EE00DDDFF2 /* CustomViews */,
 				95A152C12A4A44C9001335E7 /* MainView.swift */,
 				95A152C32A4BBEAC001335E7 /* LaunchView.swift */,
+				95E8570B2A4CC95000DDDFF2 /* SignInView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -155,13 +160,6 @@
 			children = (
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		95A152BF2A4A4385001335E7 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		95A152C02A4A438C001335E7 /* ViewModel */ = {
@@ -177,6 +175,14 @@
 				95A152C62A4BCA3F001335E7 /* UIScreens+sizes.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		95E8570D2A4CE6EE00DDDFF2 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				95E8570E2A4CE71900DDDFF2 /* BackwardButtonView.swift */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +316,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				95A1529B2A4A4304001335E7 /* CryptoApp.xcdatamodeld in Sources */,
+				95E8570F2A4CE71900DDDFF2 /* BackwardButtonView.swift in Sources */,
+				95E8570C2A4CC95000DDDFF2 /* SignInView.swift in Sources */,
 				95A152C42A4BBEAC001335E7 /* LaunchView.swift in Sources */,
 				95A152982A4A4304001335E7 /* Persistence.swift in Sources */,
 				95A152C72A4BCA3F001335E7 /* UIScreens+sizes.swift in Sources */,
