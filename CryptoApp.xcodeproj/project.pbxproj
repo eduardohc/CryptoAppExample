@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9576A2B12A515B08006F95A6 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9576A2AA2A515B08006F95A6 /* Montserrat-SemiBold.ttf */; };
+		9576A2B22A515B08006F95A6 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9576A2AB2A515B08006F95A6 /* Montserrat-Light.ttf */; };
+		9576A2B42A515B08006F95A6 /* Montserrat-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9576A2AD2A515B08006F95A6 /* Montserrat-Thin.ttf */; };
+		9576A2B52A515B08006F95A6 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9576A2AE2A515B08006F95A6 /* Montserrat-Regular.ttf */; };
+		9576A2B62A515B08006F95A6 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9576A2AF2A515B08006F95A6 /* Montserrat-Bold.ttf */; };
+		9576A2B72A515B08006F95A6 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9576A2B02A515B08006F95A6 /* Montserrat-Medium.ttf */; };
 		95A1528F2A4A4303001335E7 /* CryptoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A1528E2A4A4303001335E7 /* CryptoApp.swift */; };
 		95A152932A4A4304001335E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95A152922A4A4304001335E7 /* Assets.xcassets */; };
 		95A152962A4A4304001335E7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95A152952A4A4304001335E7 /* Preview Assets.xcassets */; };
@@ -40,6 +46,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9576A2AA2A515B08006F95A6 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		9576A2AB2A515B08006F95A6 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
+		9576A2AD2A515B08006F95A6 /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Thin.ttf"; sourceTree = "<group>"; };
+		9576A2AE2A515B08006F95A6 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		9576A2AF2A515B08006F95A6 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		9576A2B02A515B08006F95A6 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		9576A2B82A515B6E006F95A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		95A1528B2A4A4303001335E7 /* CryptoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95A1528E2A4A4303001335E7 /* CryptoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoApp.swift; sourceTree = "<group>"; };
 		95A152922A4A4304001335E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -83,6 +96,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9576A2A82A515AE9006F95A6 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				9576A2A92A515AF5006F95A6 /* Montserrat */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		9576A2A92A515AF5006F95A6 /* Montserrat */ = {
+			isa = PBXGroup;
+			children = (
+				9576A2AF2A515B08006F95A6 /* Montserrat-Bold.ttf */,
+				9576A2AB2A515B08006F95A6 /* Montserrat-Light.ttf */,
+				9576A2B02A515B08006F95A6 /* Montserrat-Medium.ttf */,
+				9576A2AE2A515B08006F95A6 /* Montserrat-Regular.ttf */,
+				9576A2AA2A515B08006F95A6 /* Montserrat-SemiBold.ttf */,
+				9576A2AD2A515B08006F95A6 /* Montserrat-Thin.ttf */,
+			);
+			path = Montserrat;
+			sourceTree = "<group>";
+		};
 		95A152822A4A4303001335E7 = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +140,8 @@
 		95A1528D2A4A4303001335E7 /* CryptoApp */ = {
 			isa = PBXGroup;
 			children = (
+				9576A2B82A515B6E006F95A6 /* Info.plist */,
+				9576A2A82A515AE9006F95A6 /* Fonts */,
 				95A152C52A4BCA22001335E7 /* Extensions */,
 				95A152C02A4A438C001335E7 /* ViewModel */,
 				95A152BE2A4A437F001335E7 /* Model */,
@@ -289,7 +325,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9576A2B22A515B08006F95A6 /* Montserrat-Light.ttf in Resources */,
+				9576A2B52A515B08006F95A6 /* Montserrat-Regular.ttf in Resources */,
+				9576A2B12A515B08006F95A6 /* Montserrat-SemiBold.ttf in Resources */,
+				9576A2B62A515B08006F95A6 /* Montserrat-Bold.ttf in Resources */,
 				95A152962A4A4304001335E7 /* Preview Assets.xcassets in Resources */,
+				9576A2B42A515B08006F95A6 /* Montserrat-Thin.ttf in Resources */,
+				9576A2B72A515B08006F95A6 /* Montserrat-Medium.ttf in Resources */,
 				95A152932A4A4304001335E7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,6 +526,7 @@
 				DEVELOPMENT_TEAM = HS58FUQ5YL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CryptoApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -513,6 +556,7 @@
 				DEVELOPMENT_TEAM = HS58FUQ5YL;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CryptoApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

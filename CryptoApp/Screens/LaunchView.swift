@@ -24,7 +24,7 @@ struct LaunchView: View {
                     .font(.system(size: 42, weight: .bold, design: .monospaced))
                 
                 Text("Crypto is the future of money")
-                    .font(.system(size: 24, weight: .light, design: .rounded))
+                    .font(Font.custom("Montserrat-Light", size: 24))
                 
                 Spacer()
                 

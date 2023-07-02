@@ -21,6 +21,7 @@ struct SignInView: View {
             Text("Become a member!")
                 .font(.system(size: 32, weight: .bold, design: .monospaced))
                 .padding()
+            
             Image("img_login")
                 .resizable()
                 .scaledToFit()
@@ -40,7 +41,7 @@ struct SignInView: View {
                 Button(action: {
                     
                 }, label: {
-                    SigninButtonView(image_name: "envelope.fill", text: "Email", color: Color.green)
+                    SigninButtonView(image_name: "envelope.fill", text: "Email", color: Color.green, frameWidth: 32)
                 }).modifier(ButtonStyleModifier())
                 
                 Button(action: {
@@ -50,8 +51,8 @@ struct SignInView: View {
                 }).modifier(ButtonStyleModifier())
                 
                 Button(action: {}, label: {
-                    Text("Sign in")
-                        .font(.system(size: 18, weight: .medium))
+                    Text("Sign in here")
+                        .font(Font.custom("Montserrat-Medium", size: 18))
                         .padding(.top, 8)
                 })
             }
@@ -72,16 +73,17 @@ struct SigninButtonView: View {
     var image_name: String
     var text: String
     var color: Color
+    var frameWidth: CGFloat = 24
     
     var body: some View {
         HStack {
             Image(systemName: image_name)
                 .resizable()
-                .frame(width: 24, height: 24)
+                .frame(width: frameWidth, height: 26)
                 .foregroundColor(color)
                 .padding(.trailing, 12)
             Text(text)
-                .font(.system(size: 24, weight: .semibold))
+                .font(Font.custom("Montserrat-SemiBold", size: 21))
                 .foregroundColor(Color.black.opacity(0.5))
         }
     }
