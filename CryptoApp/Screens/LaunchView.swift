@@ -29,7 +29,7 @@ struct LaunchView: View {
                 Spacer()
                 
                 ZStack(alignment: .leading) {
-                    NavigationLink(destination: SignInView(), isActive: $navigateReached, label: {})
+                    NavigationLink(destination: SignupOptionsView(), isActive: $navigateReached, label: {})
                         .disabled(true)
                     
                     Text("Get started")

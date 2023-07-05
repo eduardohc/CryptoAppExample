@@ -10,18 +10,22 @@ import SwiftUI
 struct BackwardButtonView: View {
     @Environment(\.dismiss) private var dismiss
     var body: some View {
-        Button(action: {
-            dismiss()
-        }, label: {
-            Image(systemName: "arrow.backward")
-                .resizable()
-                .frame(width: 16, height: 16)
-                .foregroundColor(Color.black.opacity(0.7))
-        })
-        .padding()
-        .background(Color.gray.opacity(0.1))
-        .foregroundColor(.black)
-        .cornerRadius(22)
+        
+        HStack {
+            Button(action: {
+                dismiss()
+            }, label: {
+                Image(systemName: "arrow.backward")
+                    .resizable()
+                    .frame(width: 16, height: 16)
+                    .foregroundColor(Color.black.opacity(0.7))
+            })
+            .padding()
+            .background(Color.gray.opacity(0.1))
+            .foregroundColor(.black)
+            .cornerRadius(22)
+            Spacer()
+        }.padding([.leading, .top], 18)
     }
 }
 
