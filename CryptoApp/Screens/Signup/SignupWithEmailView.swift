@@ -8,64 +8,72 @@
 import SwiftUI
 
 struct SignupWithEmailView: View {
-    @ObservedObject var signupViewModel = SignupViewModel()
+    @StateObject var signupViewModel = SignupViewModel()
     @State var email: String = ""
     @State var password: String = ""
     @State var confirmPassword: String = ""
     @State var isSecure: Bool = true
     @State var color: Color = Color.black
+    @State var isButtonEnabled: Bool = true
     
     var body: some View {
-        VStack {
-            BackwardButtonView()
-            TitleView(title: "Sign up with Email")
-                .padding(.bottom, 20)
+        ZStack {
+            ProgressBarView(isHidden: $signupViewModel.isLoading, loadingText: "Signing up...")
             
-            HStack {
-                Spacer().frame(width: 10)
+            VStack {
+                BackwardButtonView()
+                TitleView(title: "Sign up with Email")
+                    .padding(.bottom, 20)
                 
-                SignupInputImage(image: "envelope")
+                HStack {
+                    Spacer().frame(width: 10)
+                    
+                    SignupInputImage(image: "envelope")
+                    
+                    TextField("Enter your email", text: $email)
+                        .modifier(TextFieldModifier())
+                    
+                    Spacer().frame(width: 15)
+                    
+                }.modifier(InputModifier())
                 
-                TextField("Enter your email", text: $email)
-                    .modifier(TextFieldModifier())
+                PasswordTextField(isSecure: $isSecure, password: $password, inputText: "Enter password")
                 
-                Spacer().frame(width: 15)
+                PasswordTextField(isSecure: $isSecure, password: $confirmPassword, inputText: "Confirm password")
                 
-            }.modifier(InputModifier())
-            
-            PasswordTextField(isSecure: $isSecure, password: $password, inputText: "Enter password")
-            
-            PasswordTextField(isSecure: $isSecure, password: $confirmPassword, inputText: "Confirm password")
-            
-            Spacer()
-            
-            Button(action: {
-                let signupEndpoint = APIEndpoints.signup(key: ConfigKey.LOCAL_URL)
-                let signupURL = signupEndpoint.url(configKey: ConfigKey.LOCAL_URL)
+                Spacer()
                 
-                guard let url = signupURL else { return }
-                let signupData = SignupDataModel(email: email, password: password, confirmPassword: password)
-                signupViewModel.signup(url: "\(url)", httpMethod: HTTPMethod.post, signupData: signupData)
-            }, label: {
-                Text("Sign up")
-                    .font(Font.custom("Montserrat-SemiBold", size: 24))
-                    .foregroundColor(.white)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-            })
-            .frame(width: UIScreen.screenWidth - 40, height: 72)
-            .background(areValidInputs() ?  Color.accentColor : Color.gray.opacity(0.5))
-            .cornerRadius(18)
-            .disabled(!areValidInputs())
-            
-            Button(action: {
-                // Implement sign in action to display login view
-            }, label: {
-                Text("Sign in here")
-                    .font(Font.custom("Montserrat-Light", size: 18))
-            })
-            
-            Spacer().frame(height: 15)
-        }.navigationBarBackButtonHidden(true)
+                Button(action: {
+                    signupUser()
+                }, label: {
+                    Text("Sign up")
+                        .font(Font.custom("Montserrat-SemiBold", size: 24))
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                })
+                .frame(width: UIScreen.screenWidth - 40, height: 72)
+                .background(areValidInputs() && !signupViewModel.isLoading ? Color.accentColor : Color.gray.opacity(0.5))
+                .cornerRadius(18)
+                .disabled(!areValidInputs() && !signupViewModel.isLoading)
+                .onReceive(signupViewModel.$signupModel) { response in
+                    guard let token = response.token else {
+                        print("Token still nil")
+                        return
+                    }
+                    
+                    APITokenManager().saveToken(token: token, account: email, service: "com.hecosoft.CryptoApp")
+                }
+                
+                Button(action: {
+                    // Implement sign in action to display login view
+                }, label: {
+                    Text("Sign in here")
+                        .font(Font.custom("Montserrat-Light", size: 18))
+                })
+                
+                Spacer().frame(height: 15)
+            }.navigationBarBackButtonHidden(true)
+        }
     }
     
     func areValidInputs() -> Bool {
@@ -74,6 +82,16 @@ struct SignupWithEmailView: View {
         validInputs = email.textFieldValidatorEmail(email) && password.isPasswordValid(password) && password.passwordMatched(password, confirmPassword)
         
         return validInputs
+    }
+    
+    func signupUser() {
+        let signupEndpoint = APIEndpoints.signup(key: ConfigKey.LOCAL_URL)
+        let signupURL = signupEndpoint.url(configKey: ConfigKey.LOCAL_URL)
+        
+        guard let url = signupURL else { return }
+        let signupData = SignupDataModel(email: email, password: password, confirmPassword: password)
+        
+        signupViewModel.signup(url: "\(url)", httpMethod: HTTPMethod.post, signupData: signupData)
     }
 }
 
