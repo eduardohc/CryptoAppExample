@@ -24,6 +24,10 @@
 		9576A2D02A54D630006F95A6 /* SignupRespondeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9576A2CF2A54D62F006F95A6 /* SignupRespondeModel.swift */; };
 		9576A2D22A54D790006F95A6 /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9576A2D12A54D790006F95A6 /* SignupViewModel.swift */; };
 		9576A2D42A54FF01006F95A6 /* String+ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9576A2D32A54FF01006F95A6 /* String+ext.swift */; };
+		9576A2D82A56503A006F95A6 /* APITokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9576A2D72A56503A006F95A6 /* APITokenManager.swift */; };
+		9576A2DA2A5691D4006F95A6 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9576A2D92A5691D4006F95A6 /* ProgressBarView.swift */; };
+		9576A2DC2A569F5D006F95A6 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9576A2DB2A569F5D006F95A6 /* UserDefaultsManager.swift */; };
+		9576A2E02A56A7EC006F95A6 /* EncryptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9576A2DF2A56A7EC006F95A6 /* EncryptionManager.swift */; };
 		95A1528F2A4A4303001335E7 /* CryptoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A1528E2A4A4303001335E7 /* CryptoApp.swift */; };
 		95A152932A4A4304001335E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95A152922A4A4304001335E7 /* Assets.xcassets */; };
 		95A152962A4A4304001335E7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95A152952A4A4304001335E7 /* Preview Assets.xcassets */; };
@@ -76,6 +80,10 @@
 		9576A2D12A54D790006F95A6 /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
 		9576A2D32A54FF01006F95A6 /* String+ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ext.swift"; sourceTree = "<group>"; };
 		9576A2D62A550B5A006F95A6 /* Configuration.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Configuration.xcconfig; sourceTree = "<group>"; };
+		9576A2D72A56503A006F95A6 /* APITokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITokenManager.swift; sourceTree = "<group>"; };
+		9576A2D92A5691D4006F95A6 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
+		9576A2DB2A569F5D006F95A6 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		9576A2DF2A56A7EC006F95A6 /* EncryptionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionManager.swift; sourceTree = "<group>"; };
 		95A1528B2A4A4303001335E7 /* CryptoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95A1528E2A4A4303001335E7 /* CryptoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoApp.swift; sourceTree = "<group>"; };
 		95A152922A4A4304001335E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -161,9 +169,8 @@
 		9576A2C52A54C8B0006F95A6 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				9576A2C62A54C8DA006F95A6 /* APIClient.swift */,
-				9576A2C82A54CC44006F95A6 /* APIURLConfig.swift */,
-				9576A2CA2A54D166006F95A6 /* APIEndpoints.swift */,
+				9576A2DE2A56A7D2006F95A6 /* DataStorage */,
+				9576A2DD2A56A79D006F95A6 /* API */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -183,6 +190,26 @@
 				9576A2D62A550B5A006F95A6 /* Configuration.xcconfig */,
 			);
 			path = Configs;
+			sourceTree = "<group>";
+		};
+		9576A2DD2A56A79D006F95A6 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				9576A2C62A54C8DA006F95A6 /* APIClient.swift */,
+				9576A2C82A54CC44006F95A6 /* APIURLConfig.swift */,
+				9576A2CA2A54D166006F95A6 /* APIEndpoints.swift */,
+				9576A2D72A56503A006F95A6 /* APITokenManager.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		9576A2DE2A56A7D2006F95A6 /* DataStorage */ = {
+			isa = PBXGroup;
+			children = (
+				9576A2DB2A569F5D006F95A6 /* UserDefaultsManager.swift */,
+				9576A2DF2A56A7EC006F95A6 /* EncryptionManager.swift */,
+			);
+			path = DataStorage;
 			sourceTree = "<group>";
 		};
 		95A152822A4A4303001335E7 = {
@@ -209,7 +236,6 @@
 			isa = PBXGroup;
 			children = (
 				9576A2D52A550B31006F95A6 /* Configs */,
-				9576A2B82A515B6E006F95A6 /* Info.plist */,
 				95A152C52A4BCA22001335E7 /* Extensions */,
 				9576A2A82A515AE9006F95A6 /* Fonts */,
 				95A152C02A4A438C001335E7 /* ViewModel */,
@@ -217,6 +243,7 @@
 				95A152BD2A4A4370001335E7 /* Screens */,
 				9576A2C52A54C8B0006F95A6 /* Services */,
 				95A1528E2A4A4303001335E7 /* CryptoApp.swift */,
+				9576A2B82A515B6E006F95A6 /* Info.plist */,
 				95A152922A4A4304001335E7 /* Assets.xcassets */,
 				95A152972A4A4304001335E7 /* Persistence.swift */,
 				95A152992A4A4304001335E7 /* CryptoApp.xcdatamodeld */,
@@ -292,6 +319,7 @@
 				9576A2C22A53E93C006F95A6 /* Modifiers */,
 				95E8570E2A4CE71900DDDFF2 /* BackwardButtonView.swift */,
 				9576A2BC2A53E0CA006F95A6 /* TitleView.swift */,
+				9576A2D92A5691D4006F95A6 /* ProgressBarView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -434,7 +462,10 @@
 			files = (
 				9576A2D22A54D790006F95A6 /* SignupViewModel.swift in Sources */,
 				9576A2CB2A54D166006F95A6 /* APIEndpoints.swift in Sources */,
+				9576A2E02A56A7EC006F95A6 /* EncryptionManager.swift in Sources */,
+				9576A2D82A56503A006F95A6 /* APITokenManager.swift in Sources */,
 				9576A2CE2A54D4CF006F95A6 /* SignupDataModel.swift in Sources */,
+				9576A2DC2A569F5D006F95A6 /* UserDefaultsManager.swift in Sources */,
 				9576A2BB2A53DFA9006F95A6 /* SignupWithEmailView.swift in Sources */,
 				9576A2D42A54FF01006F95A6 /* String+ext.swift in Sources */,
 				95A1529B2A4A4304001335E7 /* CryptoApp.xcdatamodeld in Sources */,
@@ -444,6 +475,7 @@
 				9576A2C42A53F41B006F95A6 /* InputModifier.swift in Sources */,
 				95A152982A4A4304001335E7 /* Persistence.swift in Sources */,
 				9576A2C12A53E936006F95A6 /* TextFieldModifier.swift in Sources */,
+				9576A2DA2A5691D4006F95A6 /* ProgressBarView.swift in Sources */,
 				95A152C72A4BCA3F001335E7 /* UIScreens+sizes.swift in Sources */,
 				9576A2C72A54C8DA006F95A6 /* APIClient.swift in Sources */,
 				95A152C22A4A44C9001335E7 /* MainView.swift in Sources */,
