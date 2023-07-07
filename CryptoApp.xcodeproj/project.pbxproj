@@ -30,6 +30,7 @@
 		9576A2E22A577148006F95A6 /* EncryptionDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9576A2E12A577148006F95A6 /* EncryptionDataManager.swift */; };
 		9576A2E52A57754E006F95A6 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 9576A2E42A57754E006F95A6 /* SwiftKeychainWrapper */; };
 		9576A2E72A578D13006F95A6 /* EncryptionKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9576A2E62A578D13006F95A6 /* EncryptionKeys.swift */; };
+		9576A2EA2A57EBA5006F95A6 /* CryptoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9576A2E92A57EBA5006F95A6 /* CryptoListView.swift */; };
 		95A1528F2A4A4303001335E7 /* CryptoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A1528E2A4A4303001335E7 /* CryptoApp.swift */; };
 		95A152932A4A4304001335E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95A152922A4A4304001335E7 /* Assets.xcassets */; };
 		95A152962A4A4304001335E7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95A152952A4A4304001335E7 /* Preview Assets.xcassets */; };
@@ -87,6 +88,7 @@
 		9576A2DF2A56A7EC006F95A6 /* EncryptionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionManager.swift; sourceTree = "<group>"; };
 		9576A2E12A577148006F95A6 /* EncryptionDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionDataManager.swift; sourceTree = "<group>"; };
 		9576A2E62A578D13006F95A6 /* EncryptionKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionKeys.swift; sourceTree = "<group>"; };
+		9576A2E92A57EBA5006F95A6 /* CryptoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListView.swift; sourceTree = "<group>"; };
 		95A1528B2A4A4303001335E7 /* CryptoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95A1528E2A4A4303001335E7 /* CryptoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoApp.swift; sourceTree = "<group>"; };
 		95A152922A4A4304001335E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -217,6 +219,14 @@
 			path = DataStorage;
 			sourceTree = "<group>";
 		};
+		9576A2E82A57EB85006F95A6 /* CryptoList */ = {
+			isa = PBXGroup;
+			children = (
+				9576A2E92A57EBA5006F95A6 /* CryptoListView.swift */,
+			);
+			path = CryptoList;
+			sourceTree = "<group>";
+		};
 		95A152822A4A4303001335E7 = {
 			isa = PBXGroup;
 			children = (
@@ -285,6 +295,7 @@
 		95A152BD2A4A4370001335E7 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				9576A2E82A57EB85006F95A6 /* CryptoList */,
 				9576A2B92A53DF6C006F95A6 /* Signup */,
 				95E8570D2A4CE6EE00DDDFF2 /* CustomViews */,
 				95A152C12A4A44C9001335E7 /* MainView.swift */,
@@ -490,6 +501,7 @@
 				9576A2DA2A5691D4006F95A6 /* ProgressBarView.swift in Sources */,
 				95A152C72A4BCA3F001335E7 /* UIScreens+sizes.swift in Sources */,
 				9576A2C72A54C8DA006F95A6 /* APIClient.swift in Sources */,
+				9576A2EA2A57EBA5006F95A6 /* CryptoListView.swift in Sources */,
 				95A152C22A4A44C9001335E7 /* MainView.swift in Sources */,
 				95A1528F2A4A4303001335E7 /* CryptoApp.swift in Sources */,
 				9576A2D02A54D630006F95A6 /* SignupRespondeModel.swift in Sources */,

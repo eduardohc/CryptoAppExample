@@ -10,9 +10,9 @@ import SwiftUI
 struct MainView: View {
     var body: some View {
         TabView {
-            EmptyView()
+            CryptoListView()
                 .tabItem {
-                    Label("Home", systemImage: "house")
+                    Label("", systemImage: "house")
                 }
         }
         .navigationBarHidden(true)
