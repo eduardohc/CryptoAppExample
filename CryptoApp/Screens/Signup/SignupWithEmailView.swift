@@ -15,6 +15,7 @@ struct SignupWithEmailView: View {
     @State var isSecure: Bool = true
     @State var color: Color = Color.black
     @State var isButtonEnabled: Bool = true
+    @State var successfullyLogin: Bool = false
     
     var body: some View {
         ZStack {
@@ -55,6 +56,9 @@ struct SignupWithEmailView: View {
                 .background(areValidInputs() && !signupViewModel.isLoading ? Color.accentColor : Color.gray.opacity(0.5))
                 .cornerRadius(18)
                 .disabled(!areValidInputs() && !signupViewModel.isLoading)
+                .fullScreenCover(isPresented: $successfullyLogin) {
+                    MainView()
+                }
                 .onReceive(signupViewModel.$signupModel) { response in
                     guard let token = response.token else {
                         print("Token still nil")
@@ -62,6 +66,11 @@ struct SignupWithEmailView: View {
                     }
                     
                     UserDefaults.standard.set(token, forKey: "authenticationToken")
+                    UserDefaults.standard.set(true, forKey: "isLoggedIn")
+                    
+                    withAnimation {
+                        successfullyLogin.toggle()
+                    }
                     
 //                    let encryptedToken = EncryptedToken(token: token)
 //
