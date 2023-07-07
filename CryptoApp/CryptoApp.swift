@@ -8,13 +8,26 @@
 import SwiftUI
 
 @main
-struct CryptoAppApp: App {
+struct CryptoApp: App {
     let persistenceController = PersistenceController.shared
+    let encryptionDataManager = EncryptionDataManager()
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            if let authToken = UserDefaults.standard.string(forKey: "authenticationToken") {
+                MainView()
+            } else {
+                LaunchView()
+            }
+                    
+//            if let retrievedData: EncryptedToken = encryptionDataManager.retrieveDecryptedData(
+//                withKey: EncryptionKeys.encryptedTokenData.keyTuple.key,
+//                forKey: EncryptionKeys.encryptedTokenData.keyTuple.keyName
+//            ) {
+//                MainView()
+//            } else {
+//                LaunchView()
+//            }
         }
     }
 }

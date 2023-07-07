@@ -61,7 +61,15 @@ struct SignupWithEmailView: View {
                         return
                     }
                     
-                    APITokenManager().saveToken(token: token, account: email, service: "com.hecosoft.CryptoApp")
+                    UserDefaults.standard.set(token, forKey: "authenticationToken")
+                    
+//                    let encryptedToken = EncryptedToken(token: token)
+//
+//                    EncryptionDataManager().storeEncryptedData(
+//                        encryptedToken,
+//                        withKey: EncryptionKeys.encryptedTokenData.keyTuple.key,
+//                        forKey: EncryptionKeys.encryptedTokenData.keyTuple.keyName
+//                    )
                 }
                 
                 Button(action: {
