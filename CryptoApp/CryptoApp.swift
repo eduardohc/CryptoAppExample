@@ -14,7 +14,7 @@ struct CryptoApp: App {
 
     var body: some Scene {
         WindowGroup {
-            if let authToken = UserDefaults.standard.string(forKey: "authenticationToken") {
+            if let isLoggedIn = UserDefaults.standard.bool(forKey: "isLoggedIn"), isLoggedIn {
                 MainView()
             } else {
                 LaunchView()
